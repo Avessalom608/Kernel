@@ -13,6 +13,7 @@ https://github.com/graysky2/kernel_compiler_patch.git
 2.4 На просьбы указать файл указываем по очереди arch/x86/Kconfig.cpu, arch/x86/Makefile arch/x86/include/asm/vermagic.h. Готово.
 
 ![image](https://user-images.githubusercontent.com/40124505/226690824-c787facf-e057-4271-9acf-331718c72c6e.png)
+
 3. очищаем от компилированных файлов make mrproper -j4 (Где -J4 кол — во ядер)
 4. либо копируем стандартную конфигурацию zcat /proc/config.gz > .config, либо оставляем только включённые модули в системе (Важно подключить все устройства, которые будут использоваться)  make localmodconfig -j4 (Рекомендовано)
 
