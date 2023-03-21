@@ -12,7 +12,8 @@ https://github.com/graysky2/kernel_compiler_patch.git
 2.3 В директории с ядром и патчем вводим patch -p0 <  more-uarches-for-kernel-5.17+.patch
 2.4 На просьбы указать файл указываем по очереди arch/x86/Kconfig.cpu, arch/x86/Makefile arch/x86/include/asm/vermagic.h. Готово.
 
-![image](https://user-images.githubusercontent.com/40124505/226690824-c787facf-e057-4271-9acf-331718c72c6e.png)
+![image](https://user-images.githubusercontent.com/40124505/226691623-73590f95-f6a1-481f-876d-4b6aa8d0df54.png)
+
 
 3. очищаем от компилированных файлов make mrproper -j4 (Где -J4 кол — во ядер)
 4. либо копируем стандартную конфигурацию zcat /proc/config.gz > .config, либо оставляем только включённые модули в системе (Важно подключить все устройства, которые будут использоваться)  make localmodconfig -j4 (Рекомендовано)
