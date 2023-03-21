@@ -34,7 +34,7 @@ https://github.com/graysky2/kernel_compiler_patch.git
 (Где «-k 6.1.20-kingKernel» нужно укзаать папку с модулями в /lib/modules/ (Например /lib/modules/6.1.20-kingKernel)
 
 10.Обновляем загрузчик sudo grub-mkconfig -o /boot/grub/grub.cfg
-11. 
+
 
 
 
