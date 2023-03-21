@@ -18,9 +18,17 @@ https://github.com/graysky2/kernel_compiler_patch.git
 3. очищаем от компилированных файлов make mrproper -j4 (Где -J4 кол — во ядер)
 4. либо копируем стандартную конфигурацию zcat /proc/config.gz > .config, 
    либо оставляем только включённые модули в системе (Важно подключить все устройства, которые будут использоваться)  make localmodconfig -j4 (Рекомендовано)
-5. (Опционально, но желательно) открыть .config и изменить значение строки CONFIG_LOCALVERSION на своё Например вместо "Manjaro" написать "Lox"
+5. (Опционально, но желательно) открыть .config и изменить значение строки CONFIG_LOCALVERSION на своё Например вместо "Manjaro" написать "NeManjaro"
 6. Запускаем редактор ядра (Если на кде — то make xconfig)
+
 6.1. (Опционально) заходим в General Setup и в разделе Kernel compression mode ставим LZMA сжатие (вроде как самое эффективное), отключаем Enable BPF LSM Instrumentation (иначе будет ошибка в логе,но не должно помешать загрузке), в Enable loadable module support > Module compression mode ставим значение none
+После того, как определились с настройками, можно и Собирать ядро make -j4
+7. Собираем модули sudo make modules -j4 и устанавливаем их sudo make modules_install -j4 (Где -j4 это кол - во ядер)
+8. Копируем собранное ядро sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-6.1.20-kingKernel (Где «kingKernel» можно ставить любое название по желанию)
+9. создаём файл инициализации sudo mkinitcpio -k 6.1.20-kingKernel -g /boot/initramfs-6.1.20-kingKernel.img (Где «-k 6.1.20-kingKernel» нужно укзаать папку с модулями в /lib/modules/ (Например /lib/modules/6.1.20-kingKernel)
+10. Обновляем загрузчик sudo grub-mkconfig -o /boot/grub/grub.cfg
+11. 
+
 
 
 
