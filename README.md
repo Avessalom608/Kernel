@@ -10,7 +10,10 @@ https://github.com/graysky2/kernel_compiler_patch.git
 2.1. скачиваем и распаковываем. 
 2.2. Перемещаем файл more-uarches-for-kernel-5.17+.patch в директорию с ядром
 2.3 В директории с ядром и патчем вводим patch -p0 <  more-uarches-for-kernel-5.17+.patch
-2.4 На просьбы указать файл указываем по очереди arch/x86/Kconfig.cpu, arch/x86/Makefile arch/x86/include/asm/vermagic.h
-![image](https://user-images.githubusercontent.com/40124505/226690545-247cfa64-9a53-401f-b943-89301c24eb0c.png)
+2.4 На просьбы указать файл указываем по очереди arch/x86/Kconfig.cpu, arch/x86/Makefile arch/x86/include/asm/vermagic.h. Готово.
+
+![image](https://user-images.githubusercontent.com/40124505/226690824-c787facf-e057-4271-9acf-331718c72c6e.png)
+
+
 
 
