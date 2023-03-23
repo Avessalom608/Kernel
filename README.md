@@ -1,9 +1,8 @@
-# kernel compilation (RU)
-Сборка ядра + драйвер nvidia
+# Компиляция Ядра + модуль Nvidia (RU)
 
 Учти, что по такой инструкции я собирал ядро 6.1.20 для manjaro KDE, 
 любые отклонения возможно могут либо создать новые проблемы, либо не будет имеющихся.
-# Ядро Kernel
+# Ядро 
 
 1. скачиваем исходные файлы ядра с kernel.org, разархивируем 
 
@@ -54,14 +53,15 @@
 
 8. Копируем собранное ядро 
 
-         sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-6.1.20-kingKernel 
+         sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-6.1.20-CustomKernel 
 
-``(Где «kingKernel» можно ставить любое название по желанию)``
+``(Где «CustomgKernel» можно ставить любое название по желанию)``
+
 9. Создаём файл инициализации 
 
-         sudo mkinitcpio -k 6.1.20-kingKernel -g /boot/initramfs-6.1.20-kingKernel.img
+         sudo mkinitcpio -k 6.1.20-CustomKernel -g /boot/initramfs-6.1.20-CustomKernel.img
 
-`Где «-k 6.1.20-kingKernel» нужно укзаать папку с модулями в /lib/modules/ (Например /lib/modules/6.1.20-kingKernel`
+`Где «-k 6.1.20-CustomKernel» нужно укзаать папку с модулями в /lib/modules/ (Например /lib/modules/6.1.20-CustomKernel`
 
 10. Обновляем загрузчик 
 
@@ -95,7 +95,7 @@
 2. Загрузиться в работающее ядро
 3. Удаляем ядро, модули и initramfs
  
-         sudo rm -fr /boot/vmlinuz-6.1.20-kingKernel &&  sudo rm -fr /lib/modules/6.1.20-kingKernel && sudo rm -r /boot/initramfs-6.1.20-kingKernel.img 
+         sudo rm -fr /boot/vmlinuz-6.1.20-CustomKernel &&  sudo rm -fr /lib/modules/6.1.20-CustomKernel && sudo rm -r /boot/initramfs-6.1.20-CustomKernel.img 
         
     
 
