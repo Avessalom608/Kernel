@@ -97,7 +97,9 @@
  
          sudo rm -fr /boot/vmlinuz-6.1.20-CustomKernel &&  sudo rm -fr /lib/modules/6.1.20-CustomKernel && sudo rm -r /boot/initramfs-6.1.20-CustomKernel.img 
         
-    
+4. снова обновляем загрузчик:
+
+            sudo grub-mkconfig -o /boot/grub/grub.cfg.
 
 
 
